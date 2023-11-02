@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+    <title>Menú Lateral</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <div class="menu">
+            <div class="menu-item" onclick="showWelcomeButton()">Inicio</div>
+            <div class="menu-item" onclick="showForm()">Formulario</div>
+        </div>
+        <div class="content">
+            <div id="welcome-button">
+                <button class="saludar-button" onclick="showWelcomeMessage()">Saludar</button>
+            </div>
+            <div id="welcome-message" class="hidden">
+                <div class="welcome-message">
+                    ¡Bienvenido a mi pagina web!
+                    <button class="close-button" onclick="closeWelcomeMessage()">Cerrar</button>
+                </div>
+            </div>
+            <div id="form" class="hidden">
+                <div class="form-container">
+                    <input type="text" placeholder="Nombre" id="nombre-input">
+                    <input type="text" placeholder="Apellido" id="apellido-input">
+                    <input type="email" placeholder="Correo" id="email-input">
+                    <span id="email-error" class="error-message"></span>
+                    <button class="guardar-button" onclick="saveFormData(); showTable()">Guardar</button>
+                </div>
+
+                <table id="table" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
